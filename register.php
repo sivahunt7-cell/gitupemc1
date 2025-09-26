@@ -1,10 +1,12 @@
 <?php
-include('db.php');
+include('db2.php');
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
 
     // Check if user exists
     $check = $conn->prepare("SELECT * FROM users WHERE username=?");
@@ -15,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($checkResult->num_rows > 0) {
         $message = "Username already exists!";
     } else {
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, email, phone) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $password);
+        $stmt->bind_param("ssss", $username, $password, $email, $phone);
 
         if ($stmt->execute()) {
             $message = "Registered successfully! You can now login.";
@@ -48,6 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="POST" action="">
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="password" name="password" placeholder="Password" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="tel" name="phone" placeholder="Phone Number" required><br>
         <input type="submit" value="Submit">
     </form>
     <p><?php echo $message; ?></p>

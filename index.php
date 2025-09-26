@@ -1,4 +1,4 @@
-<?php include('db.php'); ?>
+<?php include('db2.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,5 +33,4 @@
         </ul>
     </div>
 </body>
-</html>
 </html>
