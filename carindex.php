@@ -25,8 +25,8 @@
             <a href="#">Contact</a>
         </div>
         <div class="right">
-            <a href="register.php">Register</a>
-            <a href="login.php">Login</a>
+            <a href="carregister.php">Register</a>
+            <a href="carlogin.php">Login</a>
             <a href="usersview.php">Users View</a>
         </div>
     </div>
