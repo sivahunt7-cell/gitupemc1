@@ -8,17 +8,17 @@
 <body>
 <div class="navbar">
     <div class="left">
-        <a href="index.php">Home</a>
+        <a href="index.php">🏠 Home</a>
     </div>
     <div class="right">
-        <a href="login.php">Login</a>
-        <a href="register.php">Register</a>
+        <a href="login.php">🔑 Login</a>
+        <a href="register.php">📝 Register</a>
     </div>
 </div>
 
 <div class="content">
-    <h1>Welcome to Cloth Sales</h1>
-    <p>Find your perfect style here!</p>
+    <h1>Welcome to <span>Cloth Sales</span></h1>
+    <p>Explore the latest fashion and trends with us!</p>
 </div>
 </body>
 </html>

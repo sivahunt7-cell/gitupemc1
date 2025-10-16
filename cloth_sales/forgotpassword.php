@@ -28,7 +28,7 @@ if (isset($_POST['reset'])) {
         $hashed = password_hash($new_pass, PASSWORD_DEFAULT);
         $update = mysqli_query($conn, "UPDATE users SET password='$hashed' WHERE email='$email'");
         if (mysqli_affected_rows($conn) > 0) {
-            echo "<script>alert('Password updated successfully!'); window.location='login.php';</script>";
+            echo "<script>alert('Password Updated Successfully!'); window.location='login.php';</script>";
         } else {
             echo "<script>alert('Email not found!');</script>";
         }
