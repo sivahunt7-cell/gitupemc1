@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>Register - Cloth Sales</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="form-container">
-    <h2>Register</h2>
+    <h2>Create Account</h2>
     <form method="POST">
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
