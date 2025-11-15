@@ -1,94 +1,79 @@
-body {
-    font-family: 'Poppins', sans-serif;
+/* UNIVERSAL PAGE BACKGROUND */
+.bg {
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
-    height: 100vh;
+    padding: 0;
 }
 
+/* NAVBAR */
 .navbar {
-    background: #2c3e50;
-    color: white;
-    padding: 15px 30px;
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(0,0,0,0.7);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    top: 0;
 }
 
 .navbar a {
-    color: #f1f1f1;
+    color: #fff;
     margin: 0 12px;
-    text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    text-decoration: none;
 }
 
-.navbar a:hover {
-    color: #00b894;
-}
-
-.content {
+/* CENTERED HOME CONTENT */
+.center-box {
+    width: 600px;
+    margin: 150px auto;
     text-align: center;
-    margin-top: 150px;
-}
-
-.content h1 {
-    font-size: 45px;
-    color: #2c3e50;
-}
-
-.content span {
-    color: #00b894;
-}
-
-.content p {
-    font-size: 20px;
-    color: #555;
-}
-
-.form-container {
-    background: white;
-    width: 350px;
-    margin: 100px auto;
-    padding: 30px;
+    padding: 40px;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* FORM BOX */
+.form-box {
+    width: 350px;
+    margin: 150px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
     text-align: center;
 }
 
-h2 {
-    color: #2c3e50;
-}
-
+/* INPUT */
 input {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+    border-radius: 7px;
+    border: 1px solid #555;
 }
 
+/* BUTTON */
 button {
-    background: #00b894;
+    width: 95%;
+    padding: 10px;
+    background: #009688;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 7px;
     font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
-    background: #019870;
+    background: #00695c;
 }
 
-a {
-    color: #00b894;
+/* LINKS */
+.link, a {
+    color: #00695c;
+    font-weight: bold;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
