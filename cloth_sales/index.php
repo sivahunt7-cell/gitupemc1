@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Cloth Sales</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,6 +20,7 @@
     <h1>Welcome to <span>Cloth Sales</span></h1>
     <p>Your fashion, your style!</p>
 </div>
+</center>
 
 </body>
 </html>

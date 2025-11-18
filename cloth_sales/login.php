@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <center>
     <title>Login - Cloth Sales</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,6 +25,7 @@
     </form>
     <a href="forgot_password.php" class="link">Forgot Password?</a>
 </div>
+</center>
 
 </body>
 </html>
