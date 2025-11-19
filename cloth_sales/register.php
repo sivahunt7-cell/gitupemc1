@@ -1,45 +1,34 @@
-<?php include 'db.php'; ?>
-<!DOCTYPE html>
+<?php
+include "db.php";
+
+if(isset($_POST['register'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+
+    mysqli_query($conn, "INSERT INTO users(name,email,password) VALUES('$name','$email','$pass')");
+    header("Location: login.php");
+}
+?>
+
 <html>
 <head>
-    <title>Register - Cloth Sales</title>
-    <link rel="stylesheet" href="style.css">
+<title>Register</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body class="bg">
+<body>
 
-<div class="navbar">
-    <div class="left"><a href="index.php">🏠 Home</a></div>
-    <div class="right">
-        <a href="login.php">🔐 Login</a>
-        <a href="register.php">📝 Register</a>
-    </div>
-</div>
+<div class="container mt-4" style="max-width:450px;">
+    <h3>Register</h3>
 
-<div class="form-box">
-    <h2>Create Account</h2>
     <form method="POST">
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button name="register">Register</button>
+        <input type="text" name="name" class="form-control mt-2" placeholder="Full Name" required>
+        <input type="email" name="email" class="form-control mt-2" placeholder="Email" required>
+        <input type="password" name="password" class="form-control mt-2" placeholder="Password" required>
+
+        <button class="btn btn-success mt-3" name="register">Register</button>
     </form>
 </div>
 
 </body>
 </html>
-
-<?php
-if (isset($_POST['register'])) {
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
-    $exists = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
-    if (mysqli_num_rows($exists) > 0) {
-        echo "<script>alert('Email already registered!');</script>";
-    } else {
-        mysqli_query($conn, "INSERT INTO users (username,email,password) VALUES('$username','$email','$password')");
-        echo "<script>alert('Registered Successfully!'); window.location='login.php';</script>";
-    }
-}
-?>

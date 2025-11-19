@@ -1,50 +1,37 @@
-<?php include 'db.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Forgot Password</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg">
+<?php 
+include "db.php";
 
-<div class="navbar">
-    <div class="left"><a href="index.php">🏠 Home</a></div>
-    <div class="right">
-        <a href="login.php">🔐 Login</a>
-        <a href="register.php">📝 Register</a>
-    </div>
-</div>
+$msg = "";
 
-<div class="form-box">
-    <h2>Reset Password</h2>
-    <form method="POST">
-        <input type="email" name="email" placeholder="Enter Email" required><br>
-        <input type="password" name="new_pass" placeholder="New Password" required><br>
-        <input type="password" name="confirm_pass" placeholder="Re-enter New Password" required><br>
-        <button name="reset">Update</button>
-    </form>
-</div>
+if(isset($_POST['reset'])){
+    $email = $_POST['email'];
+    $new = $_POST['newpass'];
 
-</body>
-</html>
-
-<?php
-if (isset($_POST['reset'])) {
-    $email = $_POST["email"];
-    $new = $_POST["new_pass"];
-    $confirm = $_POST["confirm_pass"];
-
-    if ($new === $confirm) {
-        $hash = password_hash($new, PASSWORD_DEFAULT);
-        $q = mysqli_query($conn, "UPDATE users SET password='$hash' WHERE email='$email'");
-        
-        if (mysqli_affected_rows($conn) > 0) {
-            echo "<script>alert('Password Updated!'); window.location='login.php';</script>";
-        } else {
-            echo "<script>alert('Email Not Found!');</script>";
-        }
-    } else {
-        echo "<script>alert('Passwords Do Not Match!');</script>";
-    }
+    mysqli_query($conn, "UPDATE users SET password='$new' WHERE email='$email'");
+    $msg = "Password Updated!";
 }
 ?>
+
+<html>
+<head>
+<title>Forgot Password</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container mt-4" style="max-width:450px;">
+    <h3>Forgot Password</h3>
+
+    <form method="POST">
+        <input type="email" name="email" class="form-control mt-2" placeholder="Enter email" required>
+        <input type="password" name="newpass" class="form-control mt-2" placeholder="New password" required>
+
+        <?php if($msg!=""){ ?>
+        <p class="text-success mt-2"><?php echo $msg; ?></p>
+        <?php } ?>
+
+        <button class="btn btn-warning mt-3" name="reset">Update Password</button>
+    </form>
+</div>
+</body>
+</html>

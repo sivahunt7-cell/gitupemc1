@@ -1,12 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "cloth_sales";
+$conn = mysqli_connect("localhost", "root", "", "textiles_db");
 
-$conn = mysqli_connect($host, $user, $pass, $dbname);
-
-if (!$conn) {
-    die("Database Connection Failed!");
+if(!$conn){
+    die("Database connection failed");
 }
 ?>

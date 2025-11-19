@@ -1,45 +1,51 @@
-<?php include 'db.php'; ?>
-<!DOCTYPE html>
+<?php
+include "db.php";
+
+$error = "";
+
+if(isset($_POST['login'])){
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+
+    $q = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
+    $user = mysqli_fetch_assoc($q);
+
+    if($user){
+        if($user['password'] == $pass){
+            header("Location: index.php");
+        } else {
+            $error = "❌ Wrong Password";
+        }
+    } else {
+        $error = "❌ Email Not Found";
+    }
+}
+?>
+
 <html>
 <head>
-    <title>Login - Cloth Sales</title>
-    <link rel="stylesheet" href="style.css">
+<title>Login</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body class="bg">
+<body>
 
-<div class="navbar">
-    <div class="left"><a href="index.php">🏠 Home</a></div>
-    <div class="right">
-        <a href="login.php">🔐 Login</a>
-        <a href="register.php">📝 Register</a>
-    </div>
-</div>
+<div class="container mt-4" style="max-width:450px;">
+    <h3>Login</h3>
 
-<div class="form-box">
-    <h2>User Login</h2>
     <form method="POST">
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button name="login">Login</button>
+        <input type="email" name="email" class="form-control mt-2" placeholder="Email" required>
+        <input type="password" name="password" class="form-control mt-2" placeholder="Password" required>
+
+        <?php if($error!=""){ ?>
+        <p class="text-danger"><?php echo $error; ?></p>
+        <?php } ?>
+
+        <button class="btn btn-primary mt-3" name="login">Login</button>
+        <a href="forgot.php" class="btn btn-link">Forgot Password?</a>
     </form>
-    <a href="forgot_password.php" class="link">Forgot Password?</a>
+
+    <a href="register.php" class="btn btn-link">Not Registered? Sign Up</a>
 </div>
 
 </body>
 </html>
-
-<?php
-if (isset($_POST['login'])) {
-    $email = $_POST["email"];
-    $pass = $_POST["password"];
-
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
-    $row = mysqli_fetch_assoc($result);
-
-    if ($row && password_verify($pass, $row['password'])) {
-        echo "<script>alert('Login Successful!'); window.location='index.php';</script>";
-    } else {
-        echo "<script>alert('Invalid Email or Password!');</script>";
-    }
-}
-?>
