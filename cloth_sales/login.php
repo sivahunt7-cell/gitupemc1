@@ -24,8 +24,14 @@ if(isset($_POST['login'])){
 
 <html>
 <head>
+<<<<<<< HEAD
 <title>Login</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+=======
+    <center>
+    <title>Login - Cloth Sales</title>
+    <link rel="stylesheet" href="style.css">
+>>>>>>> 725f15f154bea8d27113baf8c4395077479fc80f
 </head>
 <body>
 
@@ -46,6 +52,7 @@ if(isset($_POST['login'])){
 
     <a href="register.php" class="btn btn-link">Not Registered? Sign Up</a>
 </div>
+</center>
 
 </body>
 </html>

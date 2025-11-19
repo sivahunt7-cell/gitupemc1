@@ -2,8 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <title>Saree Textiles</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+=======
+
+    <title>Cloth Sales</title>
+    <link rel="stylesheet" href="style.css">
+>>>>>>> 725f15f154bea8d27113baf8c4395077479fc80f
 </head>
 <body>
 
@@ -51,6 +57,7 @@
         <?php } ?>
     </div>
 </div>
+</center>
 
 </body>
 </html>
