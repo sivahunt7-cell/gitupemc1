@@ -2,14 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <title>Saree Textiles</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-=======
 
     <title>Cloth Sales</title>
     <link rel="stylesheet" href="style.css">
->>>>>>> 725f15f154bea8d27113baf8c4395077479fc80f
 </head>
 <body>
 
@@ -25,10 +20,10 @@
 <div id="carousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="images/silk.jpg" class="d-block w-100" style="height:400px; object-fit:cover;">
+      <img src="images/sik.jpg" class="d-block w-100" style="height:400px; object-fit:cover;">
     </div>
     <div class="carousel-item">
-      <img src="images/cotton.jpg" class="d-block w-100" style="height:400px; object-fit:cover;">
+      <img src="images/jean.jpg" class="d-block w-100" style="height:400px; object-fit:cover;">
     </div>
     <div class="carousel-item">
       <img src="images/designer.jpg" class="d-block w-100" style="height:400px; object-fit:cover;">
