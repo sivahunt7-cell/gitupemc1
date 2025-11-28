@@ -1,0 +1,51 @@
+.bg {
+    background: url('images/bg1.jpg');
+    background-size: cover;
+    padding: 20px;
+}
+
+.bg2 {
+    background: url('images/bg2.jpg');
+    background-size: cover;
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+form {
+    width: 40%;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
